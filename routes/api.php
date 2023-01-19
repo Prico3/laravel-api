@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,13 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/test', function () {
-    return response()->json([
-        'succes' => true,
-        'results' => [
-            'name' => 'Andrea',
-            'state' => 'Italia'
-
-        ]
-    ]);
-});
+Route::get('/posts', [PostController::class, 'index']);
